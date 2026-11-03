@@ -36,22 +36,49 @@ public class CineUDAW {
 
         do {
             System.out.println(MENU);
-            System.out.println("Indtroduce tu opción");
-           try {
-               opcion = sc.nextInt();
-            }catch (InputMismatchException e){
-               System.out.println("Opción no válida");
-               sc.nextLine();
-               opcion=-1;
-           }
-           switch (opcion){
-               case 1:
 
-           }
+            try {
+                opcion = sc.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Opción no válida");
+                sc.nextLine();
+                opcion = -1;
+            }
+            switch (opcion) {
+                case 1:
+                    System.out.println(" P A N T A L L A");
+                    System.out.println(" 1 2 3 4 5 6 7 8");
+                    for (char fila = 'A'; fila <= 'F'; fila++) {
+                        System.out.print(fila);
+
+                        for (int butaca = 1; butaca <= BUTACAS_POR_FILA; butaca++) {
+                            int posicion = (fila - 'A') * BUTACAS_POR_FILA + (butaca - 1);
+                            // 2. Extraemos el carácter ('-' o 'X') de esa posición
+                            char asiento = sala.charAt(posicion);
+
+                            System.out.print('-' + " ");
+                            if (butaca == 4) {
+                                System.out.print("  ");
+                            }
+
+
+                        }
+                        System.out.println();
+
+
+                    }
+                case 2:
+                    if (!sala.contains(LIBRE)) {
+                    System.out.println("No quedan sitios libres");
+
+
+                }//else
+                }
 
 
 
-        }while (opcion!=0);
+
+        } while (opcion != 0);
 
 
     }
