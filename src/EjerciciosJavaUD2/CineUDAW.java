@@ -8,5 +8,19 @@ public class CineUDAW {
         final int COLUMNAS = 8;
         final char LIBRE = '-';
         final char OCUPADA = 'x';
+        String SALA = "";
+        final String MENU = """
+        ===== CineDAW =====
+        1. Ver sala
+        2. Comprar entrada
+        3. Estadísticas
+        0. Salir
+        Elige una opción:
+        """;
+
+        System.out.println(MENU);
+
+
     }
 }
+
