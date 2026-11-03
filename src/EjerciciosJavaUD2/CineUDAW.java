@@ -37,7 +37,18 @@ public class CineUDAW {
         do {
             System.out.println(MENU);
             System.out.println("Indtroduce tu opción");
-            opcion = sc.nextInt();
+           try {
+               opcion = sc.nextInt();
+            }catch (InputMismatchException e){
+               System.out.println("Opción no válida");
+               sc.nextLine();
+               opcion=-1;
+           }
+           switch (opcion){
+               case 1:
+
+           }
+
 
 
         }while (opcion!=0);
