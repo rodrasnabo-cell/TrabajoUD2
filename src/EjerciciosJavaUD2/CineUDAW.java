@@ -3,6 +3,7 @@ package EjerciciosJavaUD2;
  * ... @author RodrigoPatiñoSeijo
  */
 
+import javax.swing.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -47,7 +48,7 @@ public class CineUDAW {
             switch (opcion) {
                 case 1:
                     System.out.println(" P A N T A L L A");
-                    System.out.println(" 1 2 3 4 5 6 7 8");
+                    System.out.println(" 1 2 3 4   5 6 7 8");
                     for (char fila = 'A'; fila <= 'F'; fila++) {
                         System.out.print(fila);
 
@@ -69,18 +70,33 @@ public class CineUDAW {
                     }
                 case 2:
                     if (!sala.contains(LIBRE)) {
-                    System.out.println("No quedan sitios libres");
+                        System.out.println("No quedan sitios libres");
 
 
-                }//else
-                }
+                    } else {
+                        String filaStr = "";
+                        boolean filaValida = false;
+                        while (!filaValida) {
+                            System.out.println("Introduce una fila (A-F)");
+                            filaStr = sc.nextLine().trim().toUpperCase();
+
+                            if (filaStr.length() == 1 && filaStr.charAt(0) >= 'A' && filaStr.charAt(0) <= 'F') {
+                                filaValida = true;
+                            } else {
+                                System.out.println("Fila incorrecta debe ser una fila entre A y F");
+
+                            }
 
 
+                        }
+                        char fila = filaStr.charAt(0);
+
+
+                    }
+            }
 
 
         } while (opcion != 0);
-
-
     }
 }
 
